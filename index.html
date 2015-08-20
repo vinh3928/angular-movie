@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="movie">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title></title>
+  </head>
+  <body ng-controller="search">
+    <h1>Angular Movie App</h1>
+    <form ng-submit="searchTitle()">
+      <label for="movie-title">Enter a Movie Title</label>
+      <input type="text" name="move-title" id="movie-title" value="" ng-model="movieTitle" />
+      <input type="submit" name="" id="" value="Search!" />
+    </form>
+    <section ng-repeat="data in allData">
+      <a href="/id/{{data.imdbID}}"><h4>{{data.Title}}</h4></a>
+      <h4>Year: {{data.Year}}</h4>
+    </section>
+    <div ng-view>
+    </div>
+    <script type="text/javascript" charset="utf-8" src="./bower_components/angular/angular.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./bower_components/angular-route/angular-route.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./js/controllers.js"></script>
+  </body>
+</html>
